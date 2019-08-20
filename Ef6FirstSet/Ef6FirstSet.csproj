@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89BFD954-2A72-4125-AAAD-6178AE3100DC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ef6FirstSet</RootNamespace>
+    <AssemblyName>Ef6FirstSet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contact.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsWithContract.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contract.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ef6Practice1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ef6Practice1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ef6Practice1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ef6Practice1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ef6Practice1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GetContactForContractAsFunction_Result.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetContactForContract_Result.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetContractCodes_Result.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSimplifiedContactForContractAndCount_Result.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSimplifiedContactForContract_Result.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSimplifiedContactsAsFunction_Result.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>Ef6Practice1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Ef6Practice1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Ef6Practice1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Ef6Practice1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ef6Practice1.edmx</DependentUpon>
+      <LastGenOutput>Ef6Practice1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Ef6Practice1.edmx.diagram">
+      <DependentUpon>Ef6Practice1.edmx</DependentUpon>
+    </None>
+    <None Include="Ef6Practice1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ef6Practice1.edmx</DependentUpon>
+      <LastGenOutput>Ef6Practice1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
